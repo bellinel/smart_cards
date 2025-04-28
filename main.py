@@ -7,12 +7,17 @@ from aiogram.filters import Command
 
 from router.user_router import user_router
 from router.disainer_router import disainer_rounter
+import os 
+from dotenv import load_dotenv
 
+load_dotenv()
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+
 # Initialize bot and dispatcher
-bot = Bot(token="7366949519:AAEXnhP7oEMWM5aDvR4r_dOeeSwYVHmHPPQ")
+bot = Bot(token=BOT_TOKEN)
 
 dp = Dispatcher()
 
